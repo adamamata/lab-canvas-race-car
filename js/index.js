@@ -71,7 +71,7 @@ window.onload = () => {
     if (obstacleCarY > canvas.height){
       obstacleCarY = -400;
       obstacleCarX = randomX; 
-    }
+    } 
 
     //obstacle car up movement
     obstacleCarUpY -= 2;
@@ -88,11 +88,14 @@ window.onload = () => {
     {
       isGameOver = true;
     }
+    else {
+      score += 0.1; //increase score whilst game is runing 
+    }
 
     
     //score 
     ctx.font = "30px Arial";
-    ctx.fillText(`Score: ${score} `, 350, 35);
+    ctx.fillText(`Score: ${Math.floor(score)} `, 320, 35);
     intervalID = requestAnimationFrame(startGame);
     
     //Stopping the game 
